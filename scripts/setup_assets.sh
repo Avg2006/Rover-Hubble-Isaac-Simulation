@@ -25,7 +25,8 @@ fi
 
 mkdir -p sim_assets/meshes
 mkdir -p sim_assets/textures
-if [ ! -f "sim_assets/textures/qwantani_noon_puresky_8k.exr" ]; then
+
+if [ ! -f "sim_assets/meshes/main_body.usd" ]; then
     echo "Downloading meshes..."
     gdown https://drive.google.com/uc?id=$MESHES_FILE_ID -O $MESHES_ZIP
 
@@ -37,7 +38,7 @@ else
     echo "Meshes already exist, skipping..."
 fi
 
-if [ ! -f "sim_assets/meshes/main_body.usd" ]; then
+if [ ! -f "sim_assets/textures/qwantani_noon_puresky_8k.exr" ]; then
     echo "Downloading textures..."
     gdown https://drive.google.com/uc?id=$TEXTURES_FILE_ID -O $TEXTURES_ZIP
 
