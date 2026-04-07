@@ -9,32 +9,52 @@ This repository provides a **lightweight, reproducible setup** where heavy asset
 ## Simulation Overview
 
 - **Multi-Sensor Simulation**
-  - 180° Front LiDAR
-        ![General View](docs/general.png)
-  - 3 RGB Cameras:
-    - Gripper camera
-        ![Gripper Cam](docs/gripper_cam.png)
-    - Base camera
-        ![Base Camera](docs/base_cam.png)
-    - Third-person view (TPV)
-        ![TPV Camera](docs/tpv_cam.png)
-  - Depth Camera
-        ![Depth Camera](docs/depth_cam.png)
+  ### 180° Front LiDAR
+
+<p align="center">
+  <img src="docs/general.png" width="700"/>
+</p>
+
+  ### 3 RGB Cameras:
+  #### Gripper camera
+
+<p align="center">
+  <img src="docs/gripper_cam.png" width="600"/>
+</p>
+
+  #### Base camera
+
+<p align="center">
+  <img src="docs/base_cam.png" width="600"/>
+</p>
+
+   #### Third-person view (TPV)
+
+<p align="center">
+  <img src="docs/tpv_cam.png" width="600"/>
+</p>
+
+  ### Depth Camera
+
+<p align="center">
+  <img src="docs/depth_cam.png" width="600"/>
+</p>
 
 - **Manipulation System**
   - Arm control with encoder feedback
-        ![ARM](docs/arm.png)
+
+<p align="center">
+  <img src="docs/arm.png" width="600"/>
+</p>
+
   - Gripper camera for precision tasks
 
 - **ERC-Style Perception**
   - Custom **Aruco marker Holder**
-        ![Aruco Marker](docs/aruco_marker.png)
 
-- **ROS2 Integration**
-  - Real-time topic communication
-
-- **Reproducible Setup**
-  - Assets downloaded via script
+<p align="center">
+  <img src="docs/aruco_marker.png" width="600"/>
+</p>
 
 ---
 
@@ -111,7 +131,7 @@ ros2 topic list
 | /griper_cam/image_raw | Output | Gripper camera feed |
 | /griper_cam/camera_info | Output | Gripper camera info |
 | /tpv_cam/image_raw | Output | Third-person camera |
-| /scan or /sim/laser_scan | Output | 180° LiDAR scan |
+| /laser_scan | Output | 180° LiDAR scan |
 
 ---
 
