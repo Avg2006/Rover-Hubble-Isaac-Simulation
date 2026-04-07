@@ -1,10 +1,14 @@
 #!/bin/bash
 
-set -e  # exit on error
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+cd "$PROJECT_ROOT"
 
 echo "Setting up Isaac Sim assets..."
 
-# -------- CONFIG --------
+# ----------------
 MESHES_FILE_ID="1e1PoO8-AqFTrluMp00KKuDM571hzYc5Y"
 TEXTURES_FILE_ID="1O-vC3MNV52-uPZXQF_7bQVNI4keG62T7"
 
