@@ -166,12 +166,28 @@ class Drive(Node):
             self.pwm_msg.data[1] = int(avg_velocity - avg_omega)
             self.pwm_msg.data[2] = int(avg_velocity - avg_omega)
             self.pwm_msg.data[3] = int(avg_velocity + avg_omega)
-        else :
-            self.pwm_msg.data[0] = int(avg_velocity + avg_omega*0.8)
-            self.pwm_msg.data[1] = int(avg_velocity - avg_omega*0.8)
-            self.pwm_msg.data[2] = int(avg_velocity - avg_omega*0.8)
-            self.pwm_msg.data[3] = int(avg_velocity + avg_omega*0.8)
-
+        elif avg_velocity > 0: 
+            if avg_omega >= 0 :
+                self.pwm_msg.data[0] = int(avg_velocity + avg_omega)
+                self.pwm_msg.data[1] = int(avg_velocity)
+                self.pwm_msg.data[2] = int(avg_velocity)
+                self.pwm_msg.data[3] = int(avg_velocity + avg_omega)
+            elif avg_omega < 0: 
+                self.pwm_msg.data[0] = int(avg_velocity)
+                self.pwm_msg.data[1] = int(avg_velocity - avg_omega)
+                self.pwm_msg.data[2] = int(avg_velocity - avg_omega)
+                self.pwm_msg.data[3] = int(avg_velocity)
+        elif avg_velocity < 0: 
+            if avg_omega >= 0 :
+                self.pwm_msg.data[0] = int(avg_velocity)
+                self.pwm_msg.data[1] = int(avg_velocity - avg_omega)
+                self.pwm_msg.data[2] = int(avg_velocity - avg_omega)
+                self.pwm_msg.data[3] = int(avg_velocity)
+            elif avg_omega < 0: 
+                self.pwm_msg.data[0] = int(avg_velocity - avg_omega)
+                self.pwm_msg.data[1] = int(avg_velocity)
+                self.pwm_msg.data[2] = int(avg_velocity)
+                self.pwm_msg.data[3] = int(avg_velocity - avg_omega)
 
     def debug_print(self,msg):
         if self.debug:

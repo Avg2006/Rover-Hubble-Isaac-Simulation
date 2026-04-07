@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'LLC_node = master.LLC:main',
+            'keyboard_node = master.keyboard_joy:main',
         ],
     },
 )

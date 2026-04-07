@@ -10,6 +10,7 @@ setup.py
 ../../build/master/master.egg-info/zip-safe
 master/LLC.py
 master/__init__.py
+master/keyboard_joy.py
 resource/master
 test/test_copyright.py
 test/test_flake8.py
